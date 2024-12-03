@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Love 💖</title>
+    <style>
+        /* Global Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cursive', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #ffc1e3, #ff9dbb);
+            background-image: url('https://cdn.pixabay.com/photo/2016/11/29/01/14/heart-1866776_1280.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: backgroundGlow 10s infinite alternate;
+        }
+
+        @keyframes backgroundGlow {
+            0% { filter: brightness(1); opacity: 1; }
+            100% { filter: brightness(0.9); opacity: 0.95; }
+        }
+
+        /* Popup Styling */
+        .popup {
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 3px solid #FF69B4;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.2s ease-in-out;
+            max-width: 350px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .popup h1 {
+            font-size: 28px;
+            color: #FF69B4;
+            margin-bottom: 15px;
+        }
+
+        .popup p {
+            font-size: 18px;
+            color: #444;
+            margin-bottom: 25px;
+        }
+
+        .popup button {
+            background: linear-gradient(to bottom right, #FF69B4, #FF1493);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .popup button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(to bottom right, #FF1493, #FF69B4);
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            display: none;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .main-content h1 {
+            font-size: 30px;
+            color: #FF69B4;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-content p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* Heart Button Styling */
+        .option-box {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 140px;
+            height: 140px;
+            margin: 15px;
+            border-radius: 50%;
+            font-size: 22px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .option-yes {
+            background: radial-gradient(circle, #FF69B4, #FF1493);
+        }
+
+        .option-no {
+            background: radial-gradient(circle, #555, #333);
+        }
+
+        .option-box:hover {
+            transform: scale(1.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Popup Section -->
+    <div class="popup">
+        <h1>💖 My Dearest Anwesha 💖</h1>
+        <p>
+            I’m deeply sorry for not wishing you at midnight.  
+            Please let me express my love in a way you truly deserve.  
+        </p>
+        <button onclick="showMainContent()">I’m Listening... 💌</button>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h1>To My One and Only</h1>
+        <p>
+            Anwesha, the day you entered my life, the world became brighter,  
+            and my heart overflowed with happiness I never imagined.  
+            Every moment with you is a gift, and your presence is my greatest blessing.  
+            <br><br>
+            I’m sorry for not wishing you at 12 am. It wasn’t because I didn’t care—it’s because I wanted to send something as beautiful as you.  
+            You’re not just someone special; you’re my everything.  
+            <br><br>
+            Forgive me, my love? I promise to make it up to you in the most magical way.  
+        </p>
+        <div class="heart-container">
+            <div class="option-box option-yes" onclick="showYesMessage()">Yes 💕</div>
+            <div class="option-box option-no" onclick="showNoMessage()">No 😢</div>
+        </div>
+    </div>
+
+    <script>
+        function showMainContent() {
+            document.querySelector('.popup').style.display = 'none';
+            document.querySelector('.main-content').style.display = 'block';
+        }
+
+        function showYesMessage() {
+            alert("I knew you'd forgive me, my love! 💖 Let's make today unforgettable.");
+        }
+
+        function showNoMessage() {
+            alert("Oh no! Please tell me how I can make it up to you. 🥺");
+            const noOption = document.querySelector('.option-no');
+            noOption.textContent = "Yes 💕";
+            noOption.classList.remove('option-no');
+            noOption.classList.add('option-yes');
+            noOption.onclick = showYesMessage;
+        }
+    </script>
+</body>
+</html>
